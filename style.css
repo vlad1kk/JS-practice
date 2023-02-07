@@ -1,150 +1,9 @@
-/*reset*/
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-	display: block;
-}
-
-body {
-	line-height: 1;
-}
-
-ol,
-ul {
-	list-style: none;
-}
-
-blockquote,
-q {
-	quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: '';
-	content: none;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* box-sizing: border-box; */
-html {
-	box-sizing: border-box;
-}
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
-}
-html,
-body {
-	height: 100%;
-	min-width: 320px;
-}
-/* ============================================ */
+/* WEATHER */
 body{
     line-height: 1;
     background-color: #1b1b1b;
@@ -198,7 +57,7 @@ body{
 	margin-left: 5px;
 	content: "°C";
 }
-/* ===================================== */
+/* CLOCK */
 .clock{
 	width: 100px;
 	padding: 5px;
@@ -208,3 +67,130 @@ body{
 	color: #ff6d91;
 }
 
+
+/* POP-UP */
+.button{
+    margin-top: 40px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.button a {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(0, 183, 255);
+    padding: 20px 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+.pop_up{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* щоб було напівпрозоре: */
+    background-color: transparent;
+    z-index: 2;
+    transform: translateY(-44.5%) scale(0);
+    transition: .4s ease-in-out;
+}
+.pop_up.active{
+    transform: translateY(0%) scale(100%);
+    background-color: rgba(0, 0, 0, .8);
+}
+/* Для авторизації */
+.pop_up_a{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* щоб було напівпрозоре: */
+    background-color: transparent;
+    z-index: 2;
+    transform: translateY(-44.5%) scale(0);
+    transition: .4s ease-in-out;
+}
+.pop_up.activea{
+    transform: translateY(0%) scale(100%);
+    background-color: rgba(0, 0, 0, .8);
+}
+/*  */
+.pop_up_container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.pop_up_body{
+    margin: auto;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 15px 110px 15px;
+    /* position: relative; - обовʼязково, для мжливості закривання вспливаючого меню */
+    position: relative;
+}
+.pop_up_body p{
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #22262D;
+    margin-bottom: 40px;
+}
+.pop_up_body input{
+    display: block;
+    margin: 25px auto 0px auto;
+    width: 330px;
+    padding: 17px 20px;
+    background-color: #E5E5E5;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #89909F;
+}
+/* Для того щоб небуло видно ободка над полем ввода: */
+.pop_up_body input:focus{
+    outline: none;
+}
+
+.pop_up_body button{
+    cursor: pointer;
+    display: block;
+    width: 330px;
+    margin: 60px auto 0px auto;
+    padding: 20px 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgb(0, 183, 255);
+}
+.pop_up_close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 21px;
+    cursor: pointer;
+	color: black;
+}
+/* Для авторизації */
+.pop_up_close_a{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 21px;
+    cursor: pointer;
+	color: black;
+}
+/*  */
+.container_pop_up{
+    display: flex;
+    justify-content: flex-end;
+}

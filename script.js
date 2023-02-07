@@ -1,4 +1,5 @@
 "use strict"
+//WEATHER
 const weatherBlock = document.querySelector("#weather")
 
 async function loadWeather(e) {
@@ -43,7 +44,7 @@ function getWeather(data) {
 if (weatherBlock) {
     loadWeather();
 }
-// ================================================
+// CLOCK
 
 const clock = document.querySelector(".clock")
 function time(){
@@ -55,3 +56,41 @@ function time(){
     clock.innerHTML = `${hours}:${min}:${sec}`
 }
 setInterval(time, 1000)
+
+
+// POP-UP(registration)
+const openPopUp = document.getElementById('open_pop_up');
+const closePopUp = document.getElementById('pop_up_close');
+const popUp = document.getElementById('pop_up');
+
+// функція за допомогою при кліку відкриється вікно
+// event.preventDefault() - метод щоб при кліку на кнопку нікуди не переходило(тобото на #)
+// classList.add - добавить клас - 'active
+openPopUp.addEventListener('click', function(e){
+    e.preventDefault();
+    popUp.classList.add('active');
+})
+
+// функція за допомогою при кліку закриється вікно
+closePopUp.addEventListener('click', () => {
+    popUp.classList.remove('active');
+})
+
+
+// POP-UP(authorization)
+const openPopUpA = document.getElementById('open_pop_up_a');
+const closePopUpA = document.getElementById('pop_up_close_a');
+const popUpA = document.getElementById('pop_up_a');
+
+// функція за допомогою при кліку відкриється вікно
+// event.preventDefault() - метод щоб при кліку на кнопку нікуди не переходило(тобото на #)
+// classList.add - добавить клас - 'active
+openPopUpA.addEventListener('click', function(e){
+    e.preventDefault();
+    popUpA.classList.add('activea');
+})
+
+// функція за допомогою при кліку закриється вікно
+closePopUpA.addEventListener('click', () => {
+    popUpA.classList.remove('activea');
+})

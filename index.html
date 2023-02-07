@@ -4,14 +4,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS practice</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- WEATHER -->
     <div class="wrapper">
         <div id="weather" class="weather"></div>
     </div>
     <br>
+
+    <!-- CLOCK -->
     <div class="clock"></div>
+    <br>
+
+    <!-- POP-UP(registration) -->
+    <div class="container_pop_up">
+    <div class="button">
+        <a href="#" id="open_pop_up">Зареєструватись</a>
+    </div>
+    <!-- .pop_up>.pop_up_container>.pop_up_body  -->
+    <div class="pop_up" id="pop_up">
+        <div class="pop_up_container">
+            <div class="pop_up_body" id="pop_up_body">
+                <p>Зареєструватись</p>
+                <form action="">
+                    <input type="text" placeholder="Імʼя">
+                    <input type="text" placeholder="Телефон">
+                    <button>Зареєструватись</button>
+                </form>
+                <div class="pop_up_close" id="pop_up_close">&#10006</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POP-UP(authorization) -->
+    <div class="button">
+        <a href="#" id="open_pop_up_a">Авторизуватись</a>
+    </div>
+    <!-- .pop_up>.pop_up_container>.pop_up_body  -->
+    <div class="pop_up" id="pop_up_a">
+        <div class="pop_up_container">
+            <div class="pop_up_body" id="pop_up_body">
+                <p>Авторизуватись</p>
+                <form action="">
+                    <input type="text" placeholder="Імʼя">
+                    <input type="text" placeholder="Телефон">
+                    <button>Авторизуватись</button>
+                </form>
+                <div class="pop_up_close" id="pop_up_close_a">&#10006</div>
+            </div>
+        </div>
+    </div>
+</div>
     <script src="script.js"></script>
 </body>
 </html>
